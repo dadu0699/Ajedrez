@@ -5,8 +5,75 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ajedrez"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Ajedrez" Height="740" Width="790" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" KeyDown="Window_KeyDown">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20px" />
+            <RowDefinition />
+            <RowDefinition Height="20px" />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Menu>
+                <MenuItem Header="Juego">
+                    <MenuItem Header="Nuevo Juego" InputGestureText="F5" Click="Reboot"/>
+                    <Separator/>
+                    <MenuItem Header="Salir" InputGestureText="Alt+F4" Click="ShutDown"/>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+        <Grid  Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="35px"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock Name="tag0" TextAlignment="Center" Text="" FontSize="24px" Height="60"/>
+                <TextBlock Name="tag8" TextAlignment="Center" Text="8" FontSize="24px" Height="78" FontWeight="Bold" Foreground="White"/>
+                <TextBlock Name="tag7" TextAlignment="Center" Text="7" FontSize="24px" Height="78" FontWeight="Bold" Foreground="White"/>
+                <TextBlock Name="tag6" TextAlignment="Center" Text="6" FontSize="24px" Height="78" FontWeight="Bold" Foreground="White"/>
+                <TextBlock Name="tag5" TextAlignment="Center" Text="5" FontSize="24px" Height="78" FontWeight="Bold" Foreground="White"/>
+                <TextBlock Name="tag4" TextAlignment="Center" Text="4" FontSize="24px" Height="78" FontWeight="Bold" Foreground="White"/>
+                <TextBlock Name="tag3" TextAlignment="Center" Text="3" FontSize="24px" Height="78" FontWeight="Bold" Foreground="White"/>
+                <TextBlock Name="tag2" TextAlignment="Center" Text="2" FontSize="24px" Height="78" FontWeight="Bold" Foreground="White"/>
+                <TextBlock Name="tag1" TextAlignment="Center" Text="1" FontSize="24px" Height="78" FontWeight="Bold" Foreground="White"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <StackPanel Orientation="Horizontal" Height="35px" VerticalAlignment="Top">
+                    <TextBlock Name="tagA" TextAlignment="Center" Text="a" FontSize="24px" FontWeight="Bold" Foreground="White" />
+                    <TextBlock Name="tagB" TextAlignment="Center" Text="b" FontSize="24px" FontWeight="Bold" Foreground="White" />
+                    <TextBlock Name="tagC" TextAlignment="Center" Text="c" FontSize="24px" FontWeight="Bold" Foreground="White" />
+                    <TextBlock Name="tagD" TextAlignment="Center" Text="d" FontSize="24px" FontWeight="Bold" Foreground="White" />
+                    <TextBlock Name="tagE" TextAlignment="Center" Text="e" FontSize="24px" FontWeight="Bold" Foreground="White" />
+                    <TextBlock Name="tagF" TextAlignment="Center" Text="f" FontSize="24px" FontWeight="Bold" Foreground="White"/>
+                    <TextBlock Name="tagG" TextAlignment="Center" Text="g" FontSize="24px" FontWeight="Bold" Foreground="White" />
+                    <TextBlock Name="tagH" TextAlignment="Center" Text="h" FontSize="24px" FontWeight="Bold" Foreground="White" />
+                </StackPanel>
+                <Grid Name="Tablero" Height="625px" Width="740px" MouseMove="Tablero_MouseMove" ShowGridLines="False" SizeChanged="Window_SizeChanged" MouseDown="Tablero_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                </Grid>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="2">
+            <TextBlock Name="Informacion" TextAlignment="Center" Text="Posición:      Turno: Blancas   Tiempo: 14:53:00" FontWeight="Bold" Foreground="White"/>
+        </StackPanel>
     </Grid>
 </Window>
